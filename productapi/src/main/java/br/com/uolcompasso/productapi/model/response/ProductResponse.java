@@ -1,33 +1,24 @@
-package br.com.uolcompasso.productapi.dto.request;
+package br.com.uolcompasso.productapi.model.response;
 
-import br.com.uolcompasso.productapi.model.Product;
+import br.com.uolcompasso.productapi.entity.Product;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class ProductRequest {
-
-    @NotBlank
+public class ProductResponse {
+    private String id;
     private String name;
-
-    @NotBlank
     private String description;
-
-    @Positive
-    @NotNull
     private BigDecimal price;
 
-    public ProductRequest(Product product) {
+    public ProductResponse(Product product) {
+        this.id = product.getId();
         this.name = product.getName();;
         this.description = product.getDescription();
         this.price = product.getPrice();

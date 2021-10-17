@@ -1,7 +1,7 @@
 package br.com.uolcompasso.productapi.interfaces.iservice;
 
-import br.com.uolcompasso.productapi.dto.request.ProductRequest;
-import br.com.uolcompasso.productapi.dto.response.ProductResponse;
+import br.com.uolcompasso.productapi.model.request.ProductRequest;
+import br.com.uolcompasso.productapi.model.response.ProductResponse;
 import org.springframework.http.ResponseEntity;
 
 import java.math.BigDecimal;
@@ -17,7 +17,7 @@ public interface IProductService {
 
     ResponseEntity<List<ProductResponse>> findAll();
 
-    ResponseEntity<List<ProductResponse>> findByFilter(BigDecimal min_price, BigDecimal max_price, String q);
+    ResponseEntity<List<ProductResponse>> findByFilter(BigDecimal minPrice, BigDecimal maxPrice, String q);
 
     ResponseEntity<?> delete(String id);
 }

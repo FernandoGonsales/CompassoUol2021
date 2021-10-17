@@ -1,14 +1,11 @@
 package br.com.uolcompasso.productapi.controller;
 
-import br.com.uolcompasso.productapi.dto.request.ProductRequest;
-import br.com.uolcompasso.productapi.dto.response.ProductResponse;
+import br.com.uolcompasso.productapi.model.request.ProductRequest;
+import br.com.uolcompasso.productapi.model.response.ProductResponse;
+import br.com.uolcompasso.productapi.interfaces.icontroller.IProductController;
 import br.com.uolcompasso.productapi.interfaces.iservice.IProductService;
-import br.com.uolcompasso.productapi.model.Product;
-import br.com.uolcompasso.productapi.repository.IProductRepository;
-import br.com.uolcompasso.productapi.service.ProductService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
@@ -17,10 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/products")
-public class ProductController {
-
-//    @Autowired
-//    private ProductService productService;
+public class ProductController implements IProductController {
 
     @Autowired
     private IProductService productService;
@@ -51,9 +45,9 @@ public class ProductController {
 
     @GetMapping("/search")
     @ApiOperation(value = "Lista de produtos filtrados")
-    public ResponseEntity<List<ProductResponse>> findAllByFilter(@RequestParam(required = false, value = "q", defaultValue = "") String q,
-                                                                 @RequestParam(required = false, value = "min_price", defaultValue = "0.00") BigDecimal minPrice,
-                                                                 @RequestParam(required = false, value = "max_price", defaultValue = "10000.00") BigDecimal maxPrice) {
+    public ResponseEntity<List<ProductResponse>> findByFilter(@RequestParam(required = false, value = "min_price") BigDecimal minPrice,
+                                                              @RequestParam(required = false, value = "max_price") BigDecimal maxPrice,
+                                                              @RequestParam(required = false, value = "q") String q) {
         return productService.findByFilter(minPrice, maxPrice, q);
     }
 

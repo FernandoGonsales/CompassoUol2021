@@ -1,0 +1,11 @@
+version: '3'
+services:
+  product-api:
+    image: compassouol/product-api:1.0.0
+    container_name: product-api
+    restart: always
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 9999:9999

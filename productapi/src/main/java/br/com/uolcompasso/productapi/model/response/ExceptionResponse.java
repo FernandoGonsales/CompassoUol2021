@@ -1,4 +1,4 @@
-package br.com.uolcompasso.productapi.model;
+package br.com.uolcompasso.productapi.model.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

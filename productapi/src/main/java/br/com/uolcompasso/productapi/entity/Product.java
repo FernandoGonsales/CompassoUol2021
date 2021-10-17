@@ -1,6 +1,6 @@
-package br.com.uolcompasso.productapi.model;
+package br.com.uolcompasso.productapi.entity;
 
-import br.com.uolcompasso.productapi.dto.request.ProductRequest;
+import br.com.uolcompasso.productapi.model.request.ProductRequest;
 import lombok.*;
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -15,11 +15,8 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
-
     private String name;
-
     private String description;
-
     private BigDecimal price;
 
     public Product(ProductRequest productRequest) {

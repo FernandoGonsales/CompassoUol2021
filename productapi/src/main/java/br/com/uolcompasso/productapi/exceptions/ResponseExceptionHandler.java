@@ -1,6 +1,6 @@
 package br.com.uolcompasso.productapi.exceptions;
 
-import br.com.uolcompasso.productapi.model.ExceptionResponse;
+import br.com.uolcompasso.productapi.model.response.ExceptionResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
