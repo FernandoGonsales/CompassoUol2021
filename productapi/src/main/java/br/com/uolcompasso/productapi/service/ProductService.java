@@ -30,7 +30,7 @@ public class ProductService implements IProductService{
 
     @Override
     public ResponseEntity<ProductResponse> create(ProductRequest productRequest) {
-        return ResponseEntity.status(HttpStatus.OK).body(new ProductResponse(productRepository.save(new Product(productRequest))));
+        return ResponseEntity.status(HttpStatus.CREATED).body(new ProductResponse(productRepository.save(new Product(productRequest))));
     }
 
     @Override
