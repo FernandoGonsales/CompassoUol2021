@@ -34,20 +34,20 @@ Confira Aqui: [COMPASSO-README.md](https://bitbucket.org/RecrutamentoDesafios/de
 
 :ballot_box_with_check: Alguns Principios de SOLID/Design Pattern
 
+## Rodar o projeto pelo Maven (porta 9999):
+(Skip Tests)
+Entre na pasta raiz do projeto (productapi) e execute o comando:
+
+```shell
+mvn clean package spring-boot:run -Dmaven.test.skip=true
+```
+
 ## Rodar os Testes:
 
 Entre na pasta raiz do projeto e execute o comando:
 
 ```shell
 mvn clean test
-```
-
-## Rodar o projeto pelo Maven (porta 9999):
-
-Entre na pasta raiz do projeto e execute o comando:
-
-```shell
-mvn clean package spring-boot:run
 ```
 
 ## Acessar Swagger:
